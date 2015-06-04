@@ -1,6 +1,6 @@
 # OmniAuth OpenWechat OAuth2
 
-Read Weibo OAuth2 docs for more details: [移动应用微信登录开发指南](https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&t=resource/res_list&verify=1&lang=zh_CN)
+Read Wechat OAuth2 docs for more details: [微信开放平台开发指南](https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&t=resource/res_list&verify=1&lang=zh_CN)
 
 ## Installation
 
@@ -28,6 +28,10 @@ Rails.application.config.middleware.use OmniAuth::Builder do
   provider :open_wechat, ENV['OPEN_WECHAT_KEY'], ENV['OPEN_WECHAT_SECRET'], :scope => 'snsapi_login'
 end
 ```
+
+## Current Version
+
+`0.0.2`
 
 ## Authentication Hash
 
