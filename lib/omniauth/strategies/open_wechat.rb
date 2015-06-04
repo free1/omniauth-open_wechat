@@ -46,7 +46,7 @@ module OmniAuth
         @uid ||= access_token["openid"]
         access_token.options[:mode] = :query
         access_token.options[:param_name] = 'access_token'
-        @raw_info ||= access_token.get("/sns/userinfo", :params => {"openid" => @uid}).parsed
+        @raw_info ||= JSON access_token.get("/sns/userinfo", :params => {"openid" => @uid}).parsed
       end
 
       protected
