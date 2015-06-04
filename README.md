@@ -1,8 +1,6 @@
-# Omniauth::OpenWechat
+# OmniAuth OpenWechat OAuth2
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/omniauth/open_wechat`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Read Weibo OAuth2 docs for more details: [移动应用微信登录开发指南](https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&t=resource/res_list&verify=1&lang=zh_CN)
 
 ## Installation
 
@@ -22,13 +20,14 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Here's a quick example, adding the middleware to a Rails app in
+`config/initializers/omniauth.rb:`
 
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release` to create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+```
+Rails.application.config.middleware.use OmniAuth::Builder do
+  provider :open_wechat, ENV['OPEN_WECHAT_KEY'], ENV['OPEN_WECHAT_SECRET'], :scope => 'snsapi_login'
+end
+```
 
 ## Contributing
 
