@@ -41,7 +41,6 @@ Here's an example Authentication Hash available in `request.env['omniauth.auth']
 {
 	"provider"=>"open_wechat", 
 	"uid"=>"xxx...", 
-	"unionid"=>"xxx...",
 	"info"=>{
 		"nickname"=>"free", 
 		"sex"=>1, 
